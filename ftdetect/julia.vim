@@ -15,7 +15,7 @@ autocmd BufEnter *.jl                call LaTeXtoUnicode#Refresh()
 function! s:L2UTrigger()
   augroup L2UInit
     autocmd!
-    autocmd InsertEnter *            let g:did_insert_enter = 1 | call LaTeXtoUnicode#Init(0)
+    autocmd InsertEnter *.jl         let g:did_insert_enter = 1 | call LaTeXtoUnicode#Init(0)
   augroup END
 endfunction
-autocmd BufEnter *                   call s:L2UTrigger()
+autocmd BufEnter *.jl                call s:L2UTrigger()
